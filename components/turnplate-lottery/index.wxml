@@ -1,0 +1,16 @@
+<view class="turnplate-wrap" style="width: {{width}}rpx; padding-bottom: {{width}}rpx;">
+  <view class="turnplate-box" animation="{{ani}}">
+    <image class="fan-img" mode="widthFix" src="{{fanImage}}"></image>
+    <block wx:for="{{prizeList}}" wx:key="index">
+      <view class="fan" style="{{item.fanStyle}}">
+      </view>
+      <view class="prize-box" style="{{item.prizeStyle}}">
+        <view class="name">{{item.name}}</view>
+        <view class="desc">{{item.desc}}</view>
+        <view class="img-box" style="{{item.imgStyle}}">
+          <image class="img" src="{{item.img}}" mode="aspectFit" style="{{item.imgStyle}}"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

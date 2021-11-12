@@ -1,0 +1,48 @@
+<view style="width: 100%; padding: 30rpx 0; display: flex;justify-content: center;">
+  <turnplate-lottery id="turnplate" width="690" list="{{prizeList}}" fanColors="{{fanColors}}" fanImage="{{fanImage}}"
+    turns="{{turnsArray[turnsIdx]}}" time="{{timeArray[timeIdx]}}">
+  </turnplate-lottery>
+</view>
+
+
+<view class="custom-wrap">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="custom-list">
+      奖品个数：{{array[index]}}
+    </view>
+  </picker>
+
+  <picker bindchange="bindTurnsChange" value="{{turnsIdx}}" range="{{turnsArray}}">
+    <view class="custom-list">
+      旋转圈数：{{turnsArray[turnsIdx]}}
+    </view>
+  </picker>
+
+  <picker bindchange="bindTimeChange" value="{{timeIdx}}" range="{{timeArray}}">
+    <view class="custom-list">
+      旋转时间：{{timeArray[timeIdx] ? (timeArray[timeIdx] + 'ms') : '自动计算'}}
+    </view>
+  </picker>
+
+  <view class="custom-list">
+    <view>扇形颜色：</view>
+    <view class="box">
+      <block wx:for="{{fanColors}}" wx:key="item">
+        <view class="color-box" style="background: {{item}};"></view>
+      </block>
+    </view>
+    <view class="get-random" catchtap="getRandomCollor">随机生成颜色</view>
+  </view>
+
+  <view class="custom-list">
+    <view>扇形图片：</view>
+    <view class="box">
+      <view wx:if="{{!fanImage}}">无图</view>
+      <image class="fan-img" mode="widthFix" src="{{fanImage}}" wx:else></image>
+    </view>
+    <view class="get-random" catchtap="getFanImage">随机获取图片</view>
+  </view>
+
+
+  <button catchtap="onStartLottery">开始抽奖</button>
+</view>

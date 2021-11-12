@@ -1,0 +1,97 @@
+view, text, image {
+  box-sizing: border-box;
+}
+
+.turnplate-wrap {
+  width: 750rpx;
+  height: 0;
+  padding-bottom: 750rpx;
+  position: relative;
+}
+
+.turnplate-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-origin: center center;
+  border-radius: 750rpx;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+}
+
+.fan-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 750rpx;
+  overflow: hidden;
+
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+
+/* 底色扇形布局 */
+.fan {
+  position: absolute;
+	top: 0; 
+  right: 0;
+	width: 50%;
+  height: 50%;
+  border: solid 1px #eee;
+  transform-origin: left bottom;
+  z-index: 1;
+}
+
+/* 奖品布局 */
+.prize-box {
+  height: 50%;
+  text-align: center;
+  padding: 20rpx 20rpx 80rpx;
+  text-align: center;
+  transform-origin: center bottom;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+}
+
+.prize-box .name {
+  width: 100%;
+  font-size: 28rpx;
+  font-weight: bold;
+  padding: 0 10%;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prize-box .desc {
+  width: 100%;
+  height: 24rpx;
+  line-height: 24rpx;
+  font-size: 20rpx;
+  color: #aaa;
+  margin-top: 8rpx;
+  padding: 0 12%;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prize-box .img-box {
+  margin-top: 20rpx;
+}
