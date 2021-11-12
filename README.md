@@ -30,7 +30,7 @@
 ```js
 // 开始抽奖
 onStartLottery(e) {
-    const winIdx = 3; // 中奖索引（由接口返回），由0开始算，这表示会停留在第四个上
+    const winIdx = 3; // 中奖索引（由接口返回），从0开始算，3:表示会停留在第四个奖品上
     this.selectComponent('#turnplate').start(winIdx, (res) => {
         console.log('转盘停止后的回调')
     })
